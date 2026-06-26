@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent" ResizeMode="NoResize">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" GlassFrameThickness="1"/>
+        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" GlassFrameThickness="0" CornerRadius="12"/>
     </WindowChrome.WindowChrome>
     <Window.Resources>
         <Style x:Key="MacTrafficLightButtonStyle" TargetType="Button">
@@ -49,48 +49,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#ECECEC" BorderBrush="#D2D2D7" BorderThickness="0,0,1,0">
+            <Border Grid.Column="0" Background="#ECECEC" BorderBrush="#D2D2D7" BorderThickness="0,0,1,0" CornerRadius="12">
                 <Grid>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,16,0" WindowChrome.IsHitTestVisibleInChrome="True">
-                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FF5F56" local:ButtonProps.HoverBackground="#F74339" local:ButtonProps.PressedBackground="#DB332a" BorderThickness="0" Click="CloseButton_Click">
-                            <Button.Resources>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="6"/>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FAC146" local:ButtonProps.HoverBackground="#F5B11D" local:ButtonProps.PressedBackground="#F2A807" BorderThickness="0" Click="MinimizeButton_Click">
-                            <Button.Resources>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="6"/>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Margin="0" Background="#27C93F" local:ButtonProps.HoverBackground="#13D630" local:ButtonProps.PressedBackground="#04C921" BorderThickness="0" Click="MaximizeButton_Click">
-                            <Button.Resources>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="6"/>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FF5F56" local:ButtonProps.HoverBackground="#F74339" local:ButtonProps.PressedBackground="#DB332a" BorderThickness="0" Click="CloseButton_Click"/>
+                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FAC146" local:ButtonProps.HoverBackground="#F5B11D" local:ButtonProps.PressedBackground="#F2A807" BorderThickness="0" Click="MinimizeButton_Click"/>
+                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Margin="0" Background="#27C93F" local:ButtonProps.HoverBackground="#13D630" local:ButtonProps.PressedBackground="#04C921" BorderThickness="0" Click="MaximizeButton_Click"/>
                     </StackPanel>
                     <TextBlock Text="Sidebar Menu" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#8E8E93"/>
                 </Grid>
