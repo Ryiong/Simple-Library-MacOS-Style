@@ -49,7 +49,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#ECECEC" BorderBrush="#D2D2D7" BorderThickness="0,0,1,0" CornerRadius="12">
+            <Border Grid.Column="0" Background="#F2F2F2" BorderBrush="#ffffff" BorderThickness="0,0,1,0" CornerRadius="12" Panel.ZIndex="1">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" 
+                          Direction="0" 
+                          ShadowDepth="2" 
+                          Opacity="0.15" 
+                          Color="Black"/>
+                </Border.Effect>
                 <Grid>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,16,0" WindowChrome.IsHitTestVisibleInChrome="True">
                         <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FF5F56" local:ButtonProps.HoverBackground="#F74339" local:ButtonProps.PressedBackground="#DB332a" BorderThickness="0" Click="CloseButton_Click"/>
