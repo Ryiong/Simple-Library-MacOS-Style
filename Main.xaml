@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Library"
         mc:Ignorable="d"
+        FontFamily="./Resources/Fonts/#SF Pro Display"
         Title="My Library" Height="700" Width="1000"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Background="Transparent" ResizeMode="NoResize">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" GlassFrameThickness="0" CornerRadius="12"/>
+        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" GlassFrameThickness="0" CornerRadius="14"/>
     </WindowChrome.WindowChrome>
     <Window.Resources>
         <Style x:Key="MacTrafficLightButtonStyle" TargetType="Button">
-            <Setter Property="Width" Value="12"/>
-            <Setter Property="Height" Value="12"/>
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Height" Value="14"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Margin" Value="0,0,8,0"/>
-            <Setter Property="Cursor" Value="Hand"/>
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -42,39 +42,114 @@
         </Style>
     </Window.Resources>
 
-    <Border Background="#F5F5F7" CornerRadius="12" BorderBrush="#D2D2D7" BorderThickness="1" ClipToBounds="True">
+    <Border Background="#F5F5F7" CornerRadius="14" BorderBrush="#D2D2D7" BorderThickness="1" ClipToBounds="True">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="230"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#F2F2F2" BorderBrush="#ffffff" BorderThickness="0,0,1,0" CornerRadius="12" Panel.ZIndex="1">
+            <Border Grid.Column="0" Background="#f5fcf0" BorderBrush="#ffffff" BorderThickness="0,0,1,0" CornerRadius="14" Panel.ZIndex="1">
                 <Border.Effect>
-                    <DropShadowEffect BlurRadius="15" 
+                    <DropShadowEffect BlurRadius="14" 
                           Direction="0" 
                           ShadowDepth="2" 
-                          Opacity="0.15" 
+                          Opacity="0.14" 
                           Color="Black"/>
                 </Border.Effect>
                 <Grid>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,16,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <Style x:Key="MenuListBoxStyle" TargetType="ListBox">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+                            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+                            <Setter Property="ItemContainerStyle">
+                                <Setter.Value>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Margin" Value="12, 4"/>
+                                        <Setter Property="Padding" Value="14,8"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Border x:Name="itemBorder" Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                                        <ContentPresenter/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="itemBorder" Property="Background" Value="#0D000000"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsSelected" Value="True">
+                                                            <Setter TargetName="itemBorder" Property="Background" Value="#E6F2DD"/>
+                                                            <Setter Property="Foreground" Value="#2A3C38"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                        <Style x:Key="MenuHeaderStyle" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="10"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Foreground" Value="#8E8E93"/>
+                            <Setter Property="Margin" Value="6,16,16,16"/>
+                        </Style>
+
+                        <Style x:Key="MenuItemTextStyle" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="Foreground" Value="#2A3C38"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" Value="True">
+                                    <Setter Property="Foreground" Value="#2A3C38"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,16,0" WindowChrome.IsHitTestVisibleInChrome="True">
                         <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FF5F56" local:ButtonProps.HoverBackground="#F74339" local:ButtonProps.PressedBackground="#DB332a" BorderThickness="0" Click="CloseButton_Click"/>
                         <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FAC146" local:ButtonProps.HoverBackground="#F5B11D" local:ButtonProps.PressedBackground="#F2A807" BorderThickness="0" Click="MinimizeButton_Click"/>
                         <Button Style="{StaticResource MacTrafficLightButtonStyle}" Margin="0" Background="#27C93F" local:ButtonProps.HoverBackground="#13D630" local:ButtonProps.PressedBackground="#04C921" BorderThickness="0" Click="MaximizeButton_Click"/>
                     </StackPanel>
-                    <TextBlock Text="Sidebar Menu" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#8E8E93"/>
+
+                    <StackPanel Grid.Row="1">
+                        <ListBox Style="{StaticResource MenuListBoxStyle}" SelectedIndex="0">
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Control Template="{StaticResource IconHome}" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <TextBlock Text="Trang chủ" Style="{StaticResource MenuItemTextStyle}"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Control Template="{StaticResource IconHome}" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <TextBlock Text="Trang chủ" Style="{StaticResource MenuItemTextStyle}"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
                 </Grid>
             </Border>
             <Grid Grid.Column="1" Background="#FFFFFF">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="698"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Main Content Area" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#8E8E93" FontSize="16"/>
+                <TextBlock Text="Main Content Area" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#8E8E93" FontSize="16" Height="20" Width="124" Margin="0,374,0,0"/>
             </Grid>
         </Grid>
     </Border>
-    
+
 </Window>
