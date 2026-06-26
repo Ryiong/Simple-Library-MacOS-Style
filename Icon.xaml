@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTemplate x:Key="IconHome" TargetType="Control">
-        <Viewbox Width="20" Height="20" Stretch="Uniform">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
             <Canvas Width="24" Height="24">
                 <Path Stroke="{TemplateBinding Foreground}"
                       StrokeThickness="2"
@@ -17,5 +17,180 @@
         </Viewbox>
     </ControlTemplate>
 
-    
+    <ControlTemplate x:Key="IconClose" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+                      Stroke="{TemplateBinding Foreground}"
+                      StrokeLineJoin="Round"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round"
+                      Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M19 5L5 19M5 5L9.5 9.5M12 12L19 19" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconFilter" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+                  Stroke="{TemplateBinding Foreground}"
+                  StrokeLineJoin="Round"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round"
+                  Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M9 12L4 4H15M20 4L15 12V21L9 18V16" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconPlus" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+              Stroke="{TemplateBinding Foreground}"
+              StrokeLineJoin="Round"
+              StrokeStartLineCap="Round"
+              StrokeEndLineCap="Round"
+              Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M4 12H9M12 12H20M12 4V20" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconRecent" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+              Stroke="{TemplateBinding Foreground}"
+              StrokeLineJoin="Round"
+              StrokeStartLineCap="Round"
+              StrokeEndLineCap="Round"
+              Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M12 8V12L14 14M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 10.1599 20.4478 8.44877 19.5 7.02331" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconSearch" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+          Stroke="{TemplateBinding Foreground}"
+          StrokeLineJoin="Round"
+          StrokeStartLineCap="Round"
+          StrokeEndLineCap="Round"
+          Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M20 20L15.8033 15.8033C15.8033 15.8033 14 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5C18 11.0137 17.9484 11.5153 17.85 12" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconTrash" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+      Stroke="{TemplateBinding Foreground}"
+      StrokeLineJoin="Round"
+      StrokeStartLineCap="Round"
+      StrokeEndLineCap="Round"
+      Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M10 10V16M14 10V16M4 6H20M15 6V5C15 3.89543 14.1046 3 13 3H11C9.89543 3 9 3.89543 9 5V6M18 6V14M18 18C18 19.1046 17.1046 20 16 20H8C6.89543 20 6 19.1046 6 18V13M6 9V6" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconCollection" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="0.8"
+                      Stroke="{TemplateBinding Foreground}"
+                      StrokeLineJoin="Round"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round"
+                      Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <PathGeometry Figures="M13.1546 3.36026C12.4835 3.00999 11.5741 3.00459 10.8976 3.35396C8.30466 4.6931 5.95279 6.22853 3.89182 7.93154C3.57311 8.19489 3.34693 8.57758 3.35079 9.02802C3.35463 9.47662 3.58541 9.85419 3.90218 10.1132C5.94604 11.7844 8.29985 13.3212 10.8453 14.6497C11.5165 15 12.4258 15.0054 13.1023 14.656C15.6953 13.3169 18.0472 11.7815 20.1081 10.0785C20.4268 9.8151 20.653 9.43242 20.6492 8.98197C20.6453 8.53338 20.4145 8.1558 20.0978 7.89679C18.0539 6.22562 15.7001 4.6888 13.1546 3.36026ZM11.5859 4.68671C11.8256 4.56294 12.2193 4.56411 12.4606 4.69004C14.8899 5.95796 17.1283 7.41666 19.0675 8.99223C17.1167 10.5932 14.885 12.0471 12.414 13.3233C12.1744 13.4471 11.7807 13.4459 11.5394 13.32C9.11004 12.052 6.87163 10.5933 4.9324 9.01777C6.88321 7.41684 9.11496 5.96285 11.5859 4.68671Z"/>
+                            <PathGeometry Figures="M21.197 12.698C21.4164 13.0494 21.3094 13.512 20.958 13.7314L14.8508 17.5443C14.022 18.0617 12.9938 18.3009 11.9999 18.301C11.006 18.301 9.9777 18.0619 9.14884 17.5446L3.10851 13.7749C2.75711 13.5556 2.65003 13.093 2.86934 12.7416C3.08864 12.3902 3.55128 12.2831 3.90268 12.5024L9.94301 16.2721C10.4872 16.6117 11.2264 16.801 11.9998 16.801C12.7732 16.8009 13.5124 16.6116 14.0564 16.2719L20.1636 12.459C20.515 12.2397 20.9776 12.3467 21.197 12.698Z"/>
+                            <PathGeometry Figures="M21.197 16.4527C21.4164 16.804 21.3094 17.2667 20.9581 17.4861L15.6692 20.7889C14.6115 21.4494 13.2886 21.7602 11.9998 21.7602C10.7111 21.7603 9.38808 21.4497 8.3303 20.7894L3.10843 17.5296C2.75706 17.3102 2.65004 16.8476 2.86938 16.4962C3.08873 16.1448 3.55139 16.0378 3.90276 16.2572L9.12462 19.517C9.89764 19.9995 10.9316 20.2603 11.9998 20.2602C13.068 20.2602 14.1018 19.9993 14.8746 19.5167L20.1635 16.2138C20.5149 15.9944 20.9776 16.1013 21.197 16.4527Z"/>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconList" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="0.8"
+                      Stroke="{TemplateBinding Foreground}"
+                      StrokeLineJoin="Round"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round"
+                      Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <PathGeometry Figures="M2.25 6C2.25 5.58579 2.58579 5.25 3 5.25H20C20.4142 5.25 20.75 5.58579 20.75 6C20.75 6.41421 20.4142 6.75 20 6.75H3C2.58579 6.75 2.25 6.41421 2.25 6ZM2.25 11C2.25 10.5858 2.58579 10.25 3 10.25H9C9.41421 10.25 9.75 10.5858 9.75 11C9.75 11.4142 9.41421 11.75 9 11.75H3C2.58579 11.75 2.25 11.4142 2.25 11ZM2.25 16C2.25 15.5858 2.58579 15.25 3 15.25H10C10.4142 15.25 10.75 15.5858 10.75 16C10.75 16.4142 10.4142 16.75 10 16.75H3C2.58579 16.75 2.25 16.4142 2.25 16Z"/>
+                            <PathGeometry Figures="M13 11.7148C13 13.4673 15.1633 15.3304 16.4901 16.3082C16.9442 16.643 17.1713 16.8103 17.5 16.8103C17.8287 16.8103 18.0558 16.643 18.5099 16.3082C19.8367 15.3304 22 13.4674 22 11.7147C22 9.03758 19.5249 8.03806 17.5 10.1061C15.4751 8.03806 13 9.03758 13 11.7148Z"/>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconObject" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="2"
+                      Stroke="{TemplateBinding Foreground}"
+                      StrokeLineJoin="Round"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round"
+                      Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M5 13V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13c0 1-.6 3-3 3m0 0H6c-1 0-3-.6-3-3v-2h12v2c0 2.4 2 3 3 3z" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconHide" TargetType="Control">
+        <Viewbox Width="24" Height="24" Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Path StrokeThickness="1.5"
+                  Stroke="{TemplateBinding Foreground}"
+                  StrokeLineJoin="Round"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round"
+                  Fill="Transparent">
+                    <Path.Data>
+                        <PathGeometry Figures="M2.21967 2.21967C1.9534 2.48594 1.9292 2.9026 2.14705 3.19621L2.21967 3.28033L6.25424 7.3149C4.33225 8.66437 2.89577 10.6799 2.29888 13.0644C2.1983 13.4662 2.4425 13.8735 2.84431 13.9741C3.24613 14.0746 3.6534 13.8305 3.75399 13.4286C4.28346 11.3135 5.59112 9.53947 7.33416 8.39452L9.14379 10.2043C8.43628 10.9258 8 11.9143 8 13.0046C8 15.2138 9.79086 17.0046 12 17.0046C13.0904 17.0046 14.0788 16.5683 14.8004 15.8608L20.7197 21.7803C21.0126 22.0732 21.4874 22.0732 21.7803 21.7803C22.0466 21.5141 22.0708 21.0974 21.8529 20.8038L21.7803 20.7197L15.6668 14.6055L15.668 14.604L8.71877 7.65782L8.72 7.656L7.58672 6.52549L3.28033 2.21967C2.98744 1.92678 2.51256 1.92678 2.21967 2.21967ZM12 5.5C10.9997 5.5 10.0291 5.64807 9.11109 5.925L10.3481 7.16119C10.8839 7.05532 11.4364 7 12 7C15.9231 7 19.3099 9.68026 20.2471 13.4332C20.3475 13.835 20.7546 14.0794 21.1565 13.9791C21.5584 13.8787 21.8028 13.4716 21.7024 13.0697C20.5994 8.65272 16.6155 5.5 12 5.5ZM12.1947 9.00928L15.996 12.81C15.8942 10.7531 14.2472 9.10764 12.1947 9.00928Z" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
 </ResourceDictionary>
