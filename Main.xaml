@@ -96,8 +96,8 @@
                                                             <Setter TargetName="itemBorder" Property="Background" Value="#0D000000"/>
                                                         </Trigger>
                                                         <Trigger Property="IsSelected" Value="True">
-                                                            <Setter TargetName="itemBorder" Property="Background" Value="#E6F2DD"/>
-                                                            <Setter Property="Foreground" Value="#2A3C38"/>
+                                                            <Setter TargetName="itemBorder" Property="Background" Value="#fbfcfa"/>
+                                                            <Setter Property="Foreground" Value="#659287"/>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -123,7 +123,7 @@
                             <Setter Property="VerticalAlignment" Value="Center"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" Value="True">
-                                    <Setter Property="Foreground" Value="#2A3C38"/>
+                                    <Setter Property="Foreground" Value="#659287"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
                                 </DataTrigger>
                             </Style.Triggers>
