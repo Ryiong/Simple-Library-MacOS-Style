@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Library"
+        xmlns:view="clr-namespace:My_Library.View"
         mc:Ignorable="d"
         FontFamily="./Resources/Fonts/#SF Pro Display"
         Title="My Library" Height="700" Width="1000"
@@ -194,7 +195,7 @@
                         </StackPanel>
                         </Button.Content>
                         </Button>
-                        <ListBox Style="{StaticResource MenuListBoxStyle}" SelectedIndex="0">
+                        <ListBox Style="{StaticResource MenuListBoxStyle}" SelectedIndex="0" SelectionChanged="Sidebar_SelectionChanged">
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <Control Template="{StaticResource IconHome}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
@@ -258,10 +259,23 @@
             </Border>
             <Grid Grid.Column="1" Background="#FFFFFF">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="698"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <TabControl Name="MainTabControl" Background="Transparent"
+                            BorderThickness="0">
+                    <TabControl.Template>
+                        <ControlTemplate TargetType="TabControl">
+                            <ContentPresenter ContentSource="SelectedContent"/>
+                        </ControlTemplate>
+                    </TabControl.Template>
 
-                <TextBlock Text="Main Content Area" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#8E8E93" FontSize="16" Height="20" Width="124" Margin="0,374,0,0"/>
+                    <TabItem>
+                        <view:ViewHome/>
+                    </TabItem>
+                    <TabItem>
+                        <view:ViewSearch/>
+                    </TabItem>
+                </TabControl>
             </Grid>
         </Grid>
     </Border>

@@ -20,6 +20,7 @@ namespace My_Library
         public Main()
         {
             InitializeComponent();
+            MainTabControl.SelectedIndex = 0;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +42,17 @@ namespace My_Library
             else
             {
                 this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MainTabControl == null) return;
+
+            ListBox listBox = sender as ListBox;
+            if (listBox != null)
+            {
+                MainTabControl.SelectedIndex = listBox.SelectedIndex;
             }
         }
     }
