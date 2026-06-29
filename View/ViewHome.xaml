@@ -4,9 +4,140 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:My_Library.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" FontFamily="./Resources/Fonts/#SF Pro Display"
+             d:DesignHeight="698" d:DesignWidth="768" Background="#fbf9f8">
+    <UserControl.Resources>
+        <Style x:Key="LibraryItemCardStyle" TargetType="ListBoxItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="8, 10"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Background="White"
+                                CornerRadius="8"
+                                Padding="6"
+                                MaxHeight="220">
+                            <ContentPresenter/>
+                        </Border>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TagTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#007AFF"/>
+            <Setter Property="Background" Value="#E5F2FF"/>
+            <Setter Property="Padding" Value="4,1,4,2"/>
+            <Setter Property="Margin" Value="0,4,0,0"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <TextBlock Text="Home"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="Your Library"
+                       Margin="15"
+                       VerticalAlignment="Center"
+                       Foreground="#1b1c1c"
+                       FontSize="25"
+                       FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListBox Name="LibraryItemsControl"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     VerticalAlignment ="Top"
+                     ItemContainerStyle="{StaticResource LibraryItemCardStyle}"
+                     ScrollViewer.VerticalScrollBarVisibility="Hidden">
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4" Margin="10,0"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="160">
+                            <Border Width="155"
+                                    Height="100"
+                                    CornerRadius="6"
+                                    BorderBrush="#E5E5EA"
+                                    BorderThickness="1"
+                                    ClipToBounds="True"
+                                    Margin="0,5,0,0">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding CoverImage}"
+                                                Stretch="UniformToFill"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Title}"
+                                       FontWeight="DemiBold"
+                                       FontSize="13"
+                                       Foreground="#1C1C1E"
+                                       Margin="5,5,5,2"
+                                       TextTrimming="CharacterEllipsis"
+                                       FontFamily="./Resources/Fonts/#SF Pro Text"
+                                       TextWrapping="Wrap"
+                                       LineStackingStrategy="BlockLineHeight"
+                                       MaxHeight="36"
+                                       LineHeight="18"/>
+
+                            <TextBlock FontSize="11"
+                                       FontWeight="Normal"
+                                       Foreground="#48484A"
+                                       TextTrimming="CharacterEllipsis"
+                                       FontFamily="./Resources/Fonts/#SF Pro Text"
+                                       Margin="5,0,5,0">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0} . {1}">
+                                        <Binding Path="Album"/>
+                                        <Binding Path="DateAdded"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+                
+            </ListBox>
+
+            <StackPanel x:Name="EmptyMessagePanel"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,100,0,0"
+                        Visibility="Collapsed">
+                <TextBlock Text="📭"
+                           FontSize="48"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                <TextBlock Text="Thư viện trống"
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="#8E8E93"
+                           HorizontalAlignment="Center"
+                           FontFamily="./Resources/Fonts/#SF Pro Text"/>
+                <TextBlock Text="Hãy thêm tài liệu mới để bắt đầu quản lý cá nhân."
+                           FontSize="12"
+                           Foreground="#AEAEB2"
+                           Margin="0,4,0,0"
+                           HorizontalAlignment="Center"
+                           FontFamily="./Resources/Fonts/#SF Pro Text"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

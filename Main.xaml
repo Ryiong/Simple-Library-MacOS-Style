@@ -7,13 +7,19 @@
         xmlns:view="clr-namespace:My_Library.View"
         mc:Ignorable="d"
         FontFamily="./Resources/Fonts/#SF Pro Display"
-        Title="My Library" Height="700" Width="1000"
+        Title="My Library"
+        Height="700"
+        Width="1000"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Background="Transparent" ResizeMode="NoResize">
+        Background="Transparent"
+        ResizeMode="NoResize">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" GlassFrameThickness="0" CornerRadius="14"/>
+        <WindowChrome CaptionHeight="50"
+                      UseAeroCaptionButtons="False"
+                      GlassFrameThickness="0"
+                      CornerRadius="14"/>
     </WindowChrome.WindowChrome>
     <Window.Resources>
         <Style x:Key="MacTrafficLightButtonStyle" TargetType="Button">
@@ -54,14 +60,23 @@
         </Style>
     </Window.Resources>
 
-    <Border Background="#F5F5F7" CornerRadius="14" BorderBrush="#D2D2D7" BorderThickness="1" ClipToBounds="True">
+    <Border Background="#F5F5F7"
+            CornerRadius="14"
+            BorderBrush="#D2D2D7"
+            BorderThickness="1"
+            ClipToBounds="True">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="230"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#f5fcf0" BorderBrush="#ffffff" BorderThickness="0,0,1,0" CornerRadius="14" Panel.ZIndex="1">
+            <Border Grid.Column="0"
+                    Background="#f5fcf0"
+                    BorderBrush="#ffffff"
+                    BorderThickness="0,0,1,0"
+                    CornerRadius="14"
+                    Panel.ZIndex="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="14" 
                           Direction="0" 
@@ -89,7 +104,10 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="ListBoxItem">
-                                                    <Border x:Name="itemBorder" Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                                    <Border x:Name="itemBorder"
+                                                            Background="{TemplateBinding Background}"
+                                                            CornerRadius="6"
+                                                            Padding="{TemplateBinding Padding}">
                                                         <ContentPresenter/>
                                                     </Border>
                                                     <ControlTemplate.Triggers>
@@ -134,7 +152,7 @@
                             <Setter Property="Background" Value="#659287"/>
                             <Setter Property="Foreground" Value="#E6F2DD"/>
                             <Setter Property="BorderThickness" Value="0"/>
-                            <Setter Property="Padding" Value="25,10,25,10"/>
+                            <Setter Property="Padding" Value="12, 10"/>
                             <Setter Property="Cursor" Value="Hand"/>
                             <Setter Property="FontFamily" Value="./Resources/Fonts/#SF Pro Text"/>
                             <Setter Property="FontSize" Value="13"/>
@@ -167,18 +185,43 @@
                             </Setter>
                         </Style>
                     </Grid.Resources>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,16,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <StackPanel Grid.Row="0"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Margin="16,16,16,0"
+                                WindowChrome.IsHitTestVisibleInChrome="True">
                         <Button Style="{StaticResource MacTrafficLightButtonStyle}"
-                                Background="#FF5F56" local:ButtonProps.HoverBackground="#F74339" local:ButtonProps.PressedBackground="#DB332a" 
-                                BorderThickness="1.5" BorderBrush="#cc4f46" Click="CloseButton_Click" Foreground="#E0443E">
-                            <Control Template="{StaticResource IconQuit}" BorderThickness="2" Width="6" Height="6" Foreground="#7b0708"/>
+                                Background="#FF5F56"
+                                local:ButtonProps.HoverBackground="#F74339"
+                                local:ButtonProps.PressedBackground="#DB332a" 
+                                BorderThickness="1.5"
+                                BorderBrush="#cc4f46"
+                                Click="CloseButton_Click"
+                                Foreground="#E0443E">
+                            <Control Template="{StaticResource IconQuit}"
+                                     BorderThickness="2"
+                                     Width="6"
+                                     Height="6"
+                                     Foreground="#7b0708"/>
                         </Button>
-                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Background="#FAC146" local:ButtonProps.HoverBackground="#F5B11D" local:ButtonProps.PressedBackground="#F2A807"
-                                BorderThickness="1.5" BorderBrush="#d4a338" Click="MinimizeButton_Click">
+                        <Button Style="{StaticResource MacTrafficLightButtonStyle}"
+                                Background="#FAC146"
+                                local:ButtonProps.HoverBackground="#F5B11D"
+                                local:ButtonProps.PressedBackground="#F2A807"
+                                BorderThickness="1.5"
+                                BorderBrush="#d4a338"
+                                Click="MinimizeButton_Click">
                             <Control Template="{StaticResource IconMinimize}" BorderThickness="2" Width="8" Height="8" Foreground="#9c5512"/>
                         </Button>
-                        <Button Style="{StaticResource MacTrafficLightButtonStyle}" Margin="0" Background="#27C93F" local:ButtonProps.HoverBackground="#13D630" local:ButtonProps.PressedBackground="#04C921"
-                                BorderThickness="1.5" BorderBrush="#369841" Click="MaximizeButton_Click">
+                        <Button Style="{StaticResource MacTrafficLightButtonStyle}"
+                                Margin="0"
+                                Background="#27C93F"
+                                local:ButtonProps.HoverBackground="#13D630"
+                                local:ButtonProps.PressedBackground="#04C921"
+                                BorderThickness="1.5"
+                                BorderBrush="#369841"
+                                Click="MaximizeButton_Click">
                             <Control Template="{StaticResource IconMaximize}" BorderThickness="2" Width="8" Height="8" Foreground="#0d660f"/>
                         </Button>
                     </StackPanel>
@@ -195,16 +238,26 @@
                         </StackPanel>
                         </Button.Content>
                         </Button>
-                        <ListBox Style="{StaticResource MenuListBoxStyle}" SelectedIndex="0" SelectionChanged="Sidebar_SelectionChanged">
+                        <ListBox Style="{StaticResource MenuListBoxStyle}"
+                                 SelectedIndex="0"
+                                 SelectionChanged="Sidebar_SelectionChanged">
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconHome}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconHome}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Trang chủ" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconSearch}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconSearch}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Tìm kiếm" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
@@ -214,25 +267,41 @@
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconRecent}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconRecent}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Gần đây" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconObject}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconObject}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Đối tượng" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconCollection}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconCollection}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Albums" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconTrash}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconTrash}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Thùng rác" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
@@ -242,13 +311,21 @@
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconList}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconList}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Tất cả danh sách" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Control Template="{StaticResource IconHide}" Width="24" Height="24" VerticalAlignment="Center" Margin="2,0,10,0"/>
+                                    <Control Template="{StaticResource IconHide}"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="2,0,10,0"/>
                                     <TextBlock Text="Danh sách ẩn" Style="{StaticResource MenuItemTextStyle}"/>
                                 </StackPanel>
                             </ListBoxItem>
@@ -261,21 +338,22 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TabControl Name="MainTabControl" Background="Transparent"
-                            BorderThickness="0">
-                    <TabControl.Template>
-                        <ControlTemplate TargetType="TabControl">
-                            <ContentPresenter ContentSource="SelectedContent"/>
-                        </ControlTemplate>
-                    </TabControl.Template>
+                <TabControl Grid.Row="1" Name="MainTabControl"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        <TabControl.Template>
+                            <ControlTemplate TargetType="TabControl">
+                                <ContentPresenter ContentSource="SelectedContent"/>
+                            </ControlTemplate>
+                        </TabControl.Template>
 
-                    <TabItem>
-                        <view:ViewHome/>
-                    </TabItem>
-                    <TabItem>
-                        <view:ViewSearch/>
-                    </TabItem>
-                </TabControl>
+                        <TabItem>
+                            <view:ViewHome/>
+                        </TabItem>
+                        <TabItem>
+                            <view:ViewSearch/>
+                        </TabItem>
+                    </TabControl>
             </Grid>
         </Grid>
     </Border>

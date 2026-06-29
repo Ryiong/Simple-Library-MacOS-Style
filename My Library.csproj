@@ -10,10 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Cover-Placeholder.jpg" />
     <None Remove="Resources\Fonts\SF-Pro.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Cover-Placeholder.jpg" />
     <Resource Include="Resources\Fonts\SF-Pro.ttf" />
   </ItemGroup>
 
